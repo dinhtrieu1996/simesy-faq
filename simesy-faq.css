@@ -1,3 +1,49 @@
+.faq-page__header {
+  width: 100%;
+  background: #0073e6;
+  padding: 60px 20px;
+}
+
+.faq-page__header-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-page__header h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin-top:0;
+  margin-bottom:20px;
+}
+
+.faq-page__search-box {
+  position: relative;
+}
+
+.faq-page__search-box svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.faq-page__search-box input {
+  font-size: 16px;
+  line-height: 40px;
+  height: 40px;
+  padding: 10px 40px;
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+}
+.result-faq-empty{
+  text-align: center;
+  padding: 30px 0;
+}
 .simesyfaqwrapper ul.simesyfaqlist {
   list-style: none;
   margin-top: 0;
@@ -138,3 +184,9 @@
 
 .simesyfaqwrapper .simesyfaq .simesyfaq__answercontent {
   margin: 0 0 20px; }
+@media (max-width:767px){
+  .faq-page__header{padding:30px 20px;}
+  .faq-page__header h1 {
+    font-size:30px;
+  }
+}
