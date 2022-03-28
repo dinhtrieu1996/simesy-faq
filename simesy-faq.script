@@ -49,7 +49,7 @@
           title:'New Group 3 a',
           faqStyleID:'style4',
           faqBehavior:'accordion',
-          faqNameTag:'h3',
+          faqNameTag:'strong',
           faqIconPosition:'right',
           faqExtras:'none',
           faqIconSize:20,
@@ -120,6 +120,8 @@ color:{{config.pageTitleColor}} !important;
 .faq-page__body .group-name{
 font-size:{{config.groupNameSize}}px;
 color:{{config.groupNameColor}};
+margin-bottom: 10px;
+display: block;
 }
 @media (max-width:767px){
 .faq-page__header h1 {
@@ -161,7 +163,7 @@ d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 
 {%for faq in group.faqs%}
 {{faq.name}}
 <li>
-<div class="simesyfaq" data-simesyfaq-state="closed">
+<div class="simesyfaq" data-simesyfaq-state="closed" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
 <div class="simesyfaq__question">
 {%if config.faqIconPosition != 'off' and config.faqIconSelect != '0' %}
 <div class="simesyfaq__icon" style="height: {{config.faqIconSize}}px; width: {{config.faqIconSize}}px;">
@@ -227,10 +229,10 @@ d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 
 {%endif%}
 </div>
 {%endif%}
-<span class="simesyfaq__text">{{faq.question}}</span>
+<span class="simesyfaq__text" itemprop="name">{{faq.question}}</span>
 </div>
-<div class="simesyfaq__answer">
-<div class="simesyfaq__answercontent">{{faq.answer}}</div>
+<div class="simesyfaq__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+<div class="simesyfaq__answercontent" itemprop="text">{{faq.answer}}</div>
 </div>
 </div>
 </li>
