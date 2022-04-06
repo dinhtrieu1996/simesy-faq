@@ -62,7 +62,7 @@
           headerHeight:300,
           showPageTitle:true,
           pageTitle:'Frequently Asked Questions',
-          pageTitleSize:50,
+          pageTitleSize:44,
           pageTitleColor:'rgba(255,255,255,1)',
           showPageIntro:true,
           pageIntro:'Check most frequently asked questions here, if you still need help then please contact us at <a href="mailto:yellow@hello.com">yellow@hello.com</a>.',
@@ -117,7 +117,7 @@ height:{{config.headerHeight}}px;
 font-size:{{config.pageTitleSize}}px !important;
 color:{{config.pageTitleColor}} !important;
 }
-.faq-page__body .group-name{
+.group-name{
 font-size:{{config.groupNameSize}}px;
 color:{{config.groupNameColor}};
 margin-bottom: 10px;
@@ -133,6 +133,11 @@ font-size:30px !important;
 <div class="faq-page__header-inner">
 {%if config.showPageTitle%}
 <h1>{{config.pageTitle}}</h1>
+{%endif%}
+{%if config.showPageIntro%}
+<p>
+{{config.pageIntro}}
+</p>
 {%endif%}
 {%if config.showSearchBox%}
 <div class="faq-page__search-box">
@@ -292,10 +297,10 @@ d="M1216 832q0-185-131.5-316.5t-316.5-131.5-316.5 131.5-131.5 316.5 131.5 316.5 
           $.each(arrFAQSearch,function(i,group){
             switch(data.config.faqNameTag){
               case 'h3':
-                searchFAQHtml += '<h3>'+group.name+'</h3>';
+                searchFAQHtml += '<h3 class="group-name">'+group.name+'</h3>';
                 break;
               case 'strong':
-                searchFAQHtml += '<strong>'+group.name+'</strong>';
+                searchFAQHtml += '<strong class="group-name">'+group.name+'</strong>';
                 break;
               default:
                 break;
